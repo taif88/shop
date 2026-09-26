@@ -22,6 +22,12 @@ def setup_database():
             categories TEXT
         )
     ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS wishlist (
+        userid INTEGER ,
+        productid INTGER
+        )
+    ''')
     
     conn.commit()
     conn.close()
@@ -45,8 +51,7 @@ class Database:
             user = self.cursor.fetchone()
             self.close()
             if user[3] == password :
-                print(password + user[3])
-                return user[1]
+                return user[1],user[0]
             else:
                 return 1
         except:
@@ -79,5 +84,23 @@ class Database:
                 products.append(self.cursor.fetchone())
             self.close()
             return products
+    def set_wishlist(self,uid,pid):
+        try:
+            self.cursor.execute('INSERT INTO wishlist (userid, productid) VALUES (?, ?)', (uid, pid))
+            self.close()
+            return True
+        except:
+            print("boom")
+            return False
+    def get_wishlist(self,uid,pid):
+        self.cursor.execute('SELECT * FROM wishlist WHERE userid=? AND productid=?', (uid,pid))
+        whishlist=self.cursor.fetchone()
+        self.close()
+        return whishlist
+
+    # def get_wishlist(self,uid,pid):
+    #     self.cursor.execute('SELECT * FROM wishlist WHERE userid=? AND prodectid=?', (uid,pid))
+    #     self.close()
     def close(self):
+        self.conn.commit()
         self.conn.close()

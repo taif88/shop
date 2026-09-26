@@ -506,6 +506,13 @@ nav .contaner .mega-menu-cate ul li a {
 .product-content .pordect-info {
     padding-left: 20px;
     padding-top: 20px;
+    position: relative;
+}
+
+.product-content .pordect-info i {
+    position: absolute;
+    right: 10px;
+    color: gold;
 }
 
 .product-content .pordect-info p {

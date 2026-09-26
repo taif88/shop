@@ -46,7 +46,7 @@ def login_page():
         return render_template("login.html",error=error)
     elif check != 0 and check != 0 :
         error = ""
-        session['name'] = check
+        session['name'],session['id'] = check
         session['cart'] = []
         return redirect(url_for('main_page'))
     error = ""
@@ -93,6 +93,24 @@ def logout_page():
 @app.route("/wishlist",methods=['GET','POST'])
 def wishlist_page():
     return render_template("wishlist.html",name =session['name'])
+
+@app.route("/api/wishlist",methods=['POST'])
+def wishlist():
+    data=request.get_json() or {}
+    db = Database()
+    if data.get("wishlist") == "True":
+        db.set_wishlist(session["id"],data.get("productid"))
+    else:
+        print("t")
+    return json({"":""})
+    
+
+@app.route("/api/wishlist",methods=['GET'])
+def wishlist_check():
+    id= request.args.get("id")
+    db = Database()
+    response={"inwishlist":db.get_wishlist(session["id"],id)}
+    return jsonify(response)
 
 @app.route("/profile")
 def profile():
