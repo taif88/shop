@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='/style.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <title>shop</title>
+</head>
+
+<body>
+    <header>
+        <div class="contaner">
+            <h1><a href="/" class="logo">shop</a></h1>
+            <ul>
+                <li><a href="/explore"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="/cart"> <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="/orders">orders</a></li>
+                <li>
+                    <a href="/profile">{{ name }}</a>
+                    <img src="{{url_for('static',filename='/proim.jpg')}}" alt="" />
+                </li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="contaner">
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/explore">explore</a></li>
+                <li><a href="/explore?category=sales">sales</a></li>
+                <li><a href="/wishlist">wishlist</a></li>
+                <li id="cate">categories</li>
+            </ul>
+        </div>
+        <div class="mc" id="mega-menu" style="display: none;">
+            <div class="contaner">
+                <div class="mega-menu-cate">
+                    <ul>
+                        <li class="cat-head">electronics</li>
+                        <li><a href="/explore?category=watches">watches</a></li>
+                        <li><a href="/explore?category=laptops">laptops</a></li>
+                        <li><a href="/explore?category=phones">phones</a></li>
+                        <li><a href="/explore?category=tablets">tablets</a></li>
+                        <li><a href="/explore?category=headphones">headphones</a></li>
+                        <li><a href="/explore?category=cameras">cameras</a></li>
+                        <li><a href="/explore?category=gaming">gaming</a></li>
+                        <li><a href="/explore?category=smart-home">smart home</a></li>
+                    </ul>
+                    <ul>
+                        <li class="cat-head">accessories</li>
+                        <li><a href="/explore?category=bags">bags</a></li>
+                        <li><a href="/explore?category=wallets">wallets</a></li>
+                        <li><a href="/explore?category=jewelry">jewelry</a></li>
+                        <li><a href="/explore?category=sunglasses">sunglasses</a></li>
+                        <li><a href="/explore?category=belts">belts</a></li>
+                        <li><a href="/explore?category=phone-cases">phone cases</a></li>
+                        <li><a href="/explore?category=chargers">chargers & cables</a></li>
+                    </ul>
+                    <ul>
+                        <li class="cat-head">Fashion</li>
+                        <li><a href="/explore?category=mens-clothing">men's clothing</a></li>
+                        <li><a href="/explore?category=womens-clothing">women's clothing</a></li>
+                        <li><a href="/explore?category=kids-wear">kids' wear</a></li>
+                    </ul>
+                    <ul>
+                        <li class="cat-head">Home & Living</li>
+                        <li><a href="/explore?category=furniture">furniture</a></li>
+                        <li><a href="/explore?category=kitchenware">kitchenware</a></li>
+                        <li><a href="/explore?category=decor">decor</a></li>
+                        <li><a href="/explore?category=bedding">bedding</a></li>
+                    </ul>
+                    <ul>
+                        <li class="cat-head">general</li>
+                        <li><a href="/explore?category=books">books</a></li>
+                        <li><a href="/explore?category=stationery">stationery</a></li>
+                        <li><a href="/explore?category=toys">toys</a></li>
+                        <li><a href="/explore?category=sports">sports equipment</a></li>
+                        <li><a href="/explore?category=beauty">beauty & personal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block body %} {% endblock %}
+    <footer>
+        <div class="contaner">
+            <ul>
+                <li class="head">social media</li>
+                <li><a href="https://www.facebook.com/">facebook</a></li>
+                <li><a href="https://www.instagram.com/">instagram</a></li>
+                <li><a href="https://x.com/">x</a></li>
+            </ul>
+            <ul>
+                <li class="head">contact us</li>
+                <li><a href="mailto:">email</a></li>
+                <li><a href="/about">about</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="{{url_for('static',filename='/js/main.js')}}"></script>
+</body>
+
+</html>

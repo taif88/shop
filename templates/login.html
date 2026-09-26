@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block body %}
+<div class="contaner">
+    <div class="uni">
+        <form action="/login" method="get" class="si" id="login-form">
+            <input type="email" name="email" id="email" placeholder="enter your email" required>
+            <input type="password" name="password" id="password" placeholder="enter your password" required>
+            <p>{{error}}</p>
+            <a href="/signup">you don't have an acount</a>
+            <input type="submit" name="" id="" value="log in" class="bu">
+        </form>
+    </div>
+    <script src="{{url_for('static',filename='/js/acount.js')}}"></script>
+</div>
+{% endblock %}

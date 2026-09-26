@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<div class="contaner product-content">
+    <div class="img">
+        <img src="{{url_for('static',filename='/proim.jpg')}}" alt="">
+    </div>
+    <div class="pordect-info">
+        <h2 class="product-title">{{product[1]}}</h2>
+        <p>{{product[2]}}</p>
+        <p class="price">price :{{product[3]}}$</p>
+        <button id="addcart">add to cart</button>
+    </div>
+</div>
+<script src="{{url_for('static',filename='/js/addcart.js')}}"></script>
+
+{% endblock %}

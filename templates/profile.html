@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<div class="contaner">
+    <div class="profile">
+        <div class="img">
+            <img src="{{url_for('static',filename='/proim.jpg')}}" alt="">
+        </div>
+        <div class="info">
+            <p>name : {{ Name }}</p>
+            <p>email : {{ email }}</p>
+            <div class="edit">
+                <button id="edit">edit ptofile</button>
+                <button id="logOut">log out</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static',filename='/js/logout.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<div class="error-info">
+    <h1>
+        404 page not found
+    </h1>
+    <h3><a href="/">return to home page</a></h3>
+    <img src="{{url_for('static',filename='images.jpg')}}" alt="">
+</div>
+
+{% endblock %}

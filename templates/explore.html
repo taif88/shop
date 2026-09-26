@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<div class="contaner ">
+    <form action="" class="search">
+        <select name="category" id="category" class="filter">
+            <option value="sales">sales</option>
+            <option value="watches">watches</option>
+            <option value="laptops">laptops</option>
+            <option value="phones">phones</option>
+            <option value="tablets">tablets</option>
+            <option value="headphones">headphones</option>
+            <option value="cameras">cameras</option>
+            <option value="gaming">gaming</option>
+            <option value="smart-home">smart home</option>
+            <option value="bags">bags</option>
+            <option value="wallets">wallets</option>
+            <option value="jewelry">jewelry</option>
+            <option value="sunglasses">sunglasses</option>
+            <option value="belts">belts</option>
+            <option value="phone-cases">phone cases</option>
+            <option value="chargers">chargers & cables</option>
+            <option value="mens-clothing">men's clothing</option>
+            <option value="womens-clothing">women's clothing</option>
+            <option value="shoes">shoes</option>
+            <option value="kids-wear">kids' wear</option>
+            <option value="furniture">furniture</option>
+            <option value="kitchenware">kitchenware</option>
+            <option value="decor">decor</option>
+            <option value="bedding">bedding</option>
+            <option value="books">books</option>
+            <option value="stationery">stationery</option>
+            <option value="toys">toys</option>
+            <option value="sports">sports equipment</option>
+            <option value="beauty">beauty & personal care</option>
+
+        </select>
+        <input type="search" name="search" class="search" placeholder="search" id="search" />
+        <input type="submit" name="" id="" value="&#xf002;" class="search-button">
+    </form>
+    {% if Name %}
+    <h2>result of "{{Name}}"</h2>
+    {% endif %}
+    <div class="search-content" id="s">
+    </div>
+</div>
+<script src="{{url_for('static',filename='/js/script.js')}}"></script>
+{% endblock %}

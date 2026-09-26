@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<div class="contaner">
+    <div class="cart">
+        <table>
+            <caption>
+                <h2>
+                    cart
+                </h2>
+            </caption>
+            <thead>
+                <tr>
+                    <td>
+                        product
+                    </td>
+                    <td>
+                        price
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="cart-content">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        result
+                    </td>
+                    <td>
+                        100$
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <button id="order">order</button>
+    </div>
+</div>
+<script src="{{url_for('static',filename='/js/cart.js')}}"></script>
+
+{% endblock %}
